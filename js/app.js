@@ -267,3 +267,20 @@ copyright.innerHTML =
 `© ${year} DS3 Comunicaciones. Todos los derechos reservados.`;
 
 }
+
+
+const slider = document.getElementById("relatedSlider");
+
+document.getElementById("nextProduct").addEventListener("click", () => {
+    slider.scrollBy({
+        left: 350,
+        behavior: "smooth"
+    });
+});
+
+document.getElementById("prevProduct").addEventListener("click", () => {
+    slider.scrollBy({
+        left: -350,
+        behavior: "smooth"
+    });
+});
