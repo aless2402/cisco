@@ -1,0 +1,176 @@
+/* LAPTOP */
+
+@media(max-width:1200px){
+
+   .product-grid{
+      grid-template-columns:1fr;
+   }
+
+   .brand-subnav,
+   .mega-brands{
+      width:95vw;
+   }
+
+}
+
+/* TABLET */
+
+@media(max-width:991px){
+
+   .topbar{
+      display:none;
+   }
+
+   .mobile-btn{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+   }
+
+   .nav-menu{
+      display:none;
+   }
+
+   .nav-menu.mobile-active{
+      display:flex;
+      flex-direction:column;
+      position:absolute;
+      top:85px;
+      left:0;
+      width:100%;
+      background:#fff;
+      padding:20px;
+   }
+
+   .section-header{
+      flex-direction:column;
+      text-align:center;
+   }
+
+   .footer-grid{
+      text-align:center;
+   }
+
+}
+
+/* CELULAR */
+
+@media(max-width:576px){
+
+   .container{
+      padding:0 16px;
+   }
+
+   .product-right h1{
+      font-size:24px;
+   }
+
+   .price{
+      font-size:32px;
+   }
+
+   .action-buttons{
+      flex-direction:column;
+   }
+
+   .btn{
+      width:100%;
+   }
+
+   .product-card{
+      flex:0 0 260px;
+   }
+
+}
+
+
+/* ==========================
+   PRODUCT PAGE
+========================== */
+
+@media(max-width:1200px){
+
+    .product-grid{
+        grid-template-columns:1fr;
+    }
+
+    .product-left{
+        position:relative;
+        top:auto;
+    }
+
+}
+
+@media(max-width:991px){
+
+    .product-right h1{
+        font-size:30px;
+    }
+
+    .price{
+        font-size:42px;
+    }
+
+    .section-header{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .slider-controls{
+        justify-content:center;
+    }
+
+    .product-card{
+        flex:0 0 290px;
+    }
+
+}
+
+@media(max-width:768px){
+
+    .product-meta{
+        grid-template-columns:1fr;
+    }
+
+    .action-buttons{
+        flex-direction:column;
+    }
+
+    .btn{
+        width:100%;
+    }
+
+}
+
+@media(max-width:576px){
+
+    .product-section{
+        padding:40px 0;
+    }
+
+    .product-right h1{
+        font-size:24px;
+    }
+
+    .price{
+        font-size:34px;
+    }
+
+    .description h2,
+    .specifications h2{
+        font-size:24px;
+    }
+
+    .section-header h2{
+        font-size:26px;
+    }
+
+    .product-card{
+        flex:0 0 260px;
+    }
+
+    .product-price{
+        font-size:24px;
+    }
+
+}

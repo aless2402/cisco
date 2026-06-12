@@ -1,0 +1,41 @@
+.site-footer{
+   margin-top:80px;
+   background:#071426;
+   color:#fff;
+   padding:60px 20px 20px;
+}
+
+.footer-grid{
+   max-width:1400px;
+   margin:auto;
+   display:grid;
+   grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+   gap:40px;
+}
+
+.footer-logo{
+   max-width:220px;
+}
+
+.social-links{
+   display:flex;
+   gap:12px;
+}
+
+.social-links a{
+   width:42px;
+   height:42px;
+   display:flex;
+   justify-content:center;
+   align-items:center;
+   border-radius:50%;
+   background:#0f172a;
+   color:#fff;
+}
+
+.copyright{
+   margin-top:40px;
+   padding-top:20px;
+   text-align:center;
+   border-top:1px solid rgba(255,255,255,.1);
+}
