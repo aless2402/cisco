@@ -15,6 +15,8 @@ document.addEventListener("DOMContentLoaded", async () => {
    );
 
    initNavbar();
+   initBreadcrumb();
+
 });
 
 /* ==========================================
@@ -48,6 +50,73 @@ async function loadComponent(container, file) {
 }
 
 /* ==========================================
+   BREADCRUMB
+========================================== */
+
+function initBreadcrumb() {
+
+   const productCode =
+      document.getElementById("product-code");
+
+   const category =
+      document.getElementById("category");
+
+   const brand =
+      document.getElementById("brand");
+
+   if (!productCode || !category || !brand) return;
+
+   const fileName =
+      window.location.pathname.split("/").pop();
+
+   const code =
+      fileName.replace(".html", "");
+
+   document.getElementById('pdf-es').href =
+    `pdf/${code}-ES.pdf`;
+
+   document.getElementById('pdf-en').href =
+    `pdf/${code}-EN.pdf`;
+    
+   productCode.textContent = code;
+
+   brand.textContent = "AMP NETCONNECT";
+
+   switch (code) {
+
+      case "1859218-2":
+         category.textContent =
+            "Cable UTP Categoría 6A Apantallado";
+         break;
+
+      case "1859345-2":
+         category.textContent =
+            "Cable UTP Categoría 6 LSZH";
+         break;
+
+      case "219585-2":
+         category.textContent =
+            "Cable UTP Categoría 6 LSZH";
+         break;
+
+      case "6-1427200-4":
+         category.textContent =
+            "Cable UTP Categoría 6 CMR";
+         break;
+
+      case "1427254-4":
+         category.textContent =
+            "Cable UTP Categoría 6 CMR";
+         break;
+
+      default:
+         category.textContent =
+            "Cable de Red";
+   }
+
+}
+
+/* ==========================================
    NAVBAR EVENTS
 ========================================== */
 
@@ -57,10 +126,6 @@ function initNavbar() {
    const navMenu = document.querySelector(".nav-menu");
 
    if (!mobileBtn || !navMenu) return;
-
-   /* ==========================================
-      OPEN / CLOSE MENU
-   ========================================== */
 
    mobileBtn.addEventListener("click", () => {
 
@@ -81,10 +146,6 @@ function initNavbar() {
       }
 
    });
-
-   /* ==========================================
-      MOBILE DROPDOWNS
-   ========================================== */
 
    const dropdowns =
       document.querySelectorAll(".nav-dropdown");
@@ -116,10 +177,6 @@ function initNavbar() {
 
    });
 
-   /* ==========================================
-      CLOSE CLICK OUTSIDE
-   ========================================== */
-
    document.addEventListener("click", (e) => {
 
       if (
@@ -149,10 +206,6 @@ function initNavbar() {
 
    });
 
-   /* ==========================================
-      CLOSE ON LINK CLICK
-   ========================================== */
-
    const navLinks =
       document.querySelectorAll(".nav-menu a");
 
@@ -177,10 +230,6 @@ function initNavbar() {
       });
 
    });
-
-   /* ==========================================
-      WINDOW RESIZE
-   ========================================== */
 
    window.addEventListener("resize", () => {
 
@@ -209,3 +258,29 @@ function initNavbar() {
    });
 
 }
+
+
+document.addEventListener("DOMContentLoaded", () => {
+
+   const pdfBtn = document.getElementById("pdfBtn");
+   const pdfMenu = document.getElementById("pdfMenu");
+
+   pdfBtn.addEventListener("click", (e) => {
+
+      e.preventDefault();
+      pdfMenu.classList.toggle("active");
+
+   });
+
+   document.addEventListener("click", (e) => {
+
+      if (
+         !pdfBtn.contains(e.target) &&
+         !pdfMenu.contains(e.target)
+      ) {
+         pdfMenu.classList.remove("active");
+      }
+
+   });
+
+});
