@@ -1,0 +1,446 @@
+/* ==========================================
+   TOPBAR
+========================================== */
+
+.topbar{
+    background:#071426;
+    color:#fff;
+    padding:10px 0;
+    font-size:14px;
+}
+
+.topbar .container{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.topbar i{
+    margin-right:8px;
+    color:#60a5fa;
+}
+
+.topbar a{
+    color:#fff;
+}
+
+/* ==========================================
+   NAVBAR
+========================================== */
+
+.navbar{
+    position:sticky;
+    top:0;
+    z-index:9999;
+    background:rgba(255,255,255,.96);
+    backdrop-filter:blur(15px);
+    border-bottom:1px solid var(--border);
+    box-shadow:0 2px 10px rgba(0,0,0,.04);
+}
+
+.nav-wrapper{
+    height:85px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo img{
+    height:58px;
+}
+
+.nav-menu{
+    display:flex;
+    align-items:center;
+    gap:30px;
+}
+
+.nav-menu a{
+    color:#111827;
+    font-size:15px;
+    font-weight:600;
+    position:relative;
+}
+
+.nav-menu a:hover{
+    color:var(--primary);
+}
+
+.nav-menu a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-8px;
+    width:0;
+    height:2px;
+    background:var(--primary);
+    transition:.3s;
+}
+
+.nav-menu a:hover::after{
+    width:100%;
+}
+
+.nav-dropdown{
+    position:relative;
+}
+
+.dropdown-btn{
+    background:none;
+    border:none;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    font-size:15px;
+    font-weight:600;
+    color:#111827;
+}
+
+.dropdown-btn:hover{
+    color:var(--primary);
+}
+
+/* ==========================================
+   SUBMENU PRODUCTOS
+========================================== */
+
+.brand-subnav{
+    position:absolute;
+    top:100%;
+    left:50%;
+    transform:translateX(-50%);
+    width:850px;
+    background:#fff;
+    border-radius:16px;
+    padding:20px;
+    box-shadow:0 20px 40px rgba(0,0,0,.12);
+    opacity:0;
+    visibility:hidden;
+    transition:.3s ease;
+    z-index:9999;
+}
+
+.products-dropdown:hover .brand-subnav{
+    opacity:1;
+    visibility:visible;
+}
+
+.brand-subnav__inner{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:15px;
+}
+
+.nav-item{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    padding:14px;
+    border-radius:12px;
+    border:1px solid #e5e7eb;
+    transition:.25s ease;
+}
+
+.nav-item:hover{
+    transform:translateY(-3px);
+    box-shadow:0 8px 18px rgba(0,0,0,.08);
+}
+
+.icon-container{
+    width:42px;
+    height:42px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:10px;
+    background:#eef6ff;
+}
+
+.icon-container i{
+    color:#049FD9;
+}
+
+/* ==========================================
+   MEGA MENU MARCAS
+========================================== */
+
+.mega-brands{
+    position:absolute;
+    top:100%;
+    left:50%;
+    transform:translateX(-50%);
+    width:950px;
+    padding:25px;
+    background:#fff;
+    border-radius:18px;
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(140px,1fr));
+    gap:15px;
+    box-shadow:0 20px 40px rgba(0,0,0,.12);
+    opacity:0;
+    visibility:hidden;
+    transition:.3s ease;
+}
+
+.nav-dropdown:hover .mega-brands{
+    opacity:1;
+    visibility:visible;
+}
+
+.brand-item{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    min-height:80px;
+    padding:12px;
+    border-radius:12px;
+    border:1px solid var(--border);
+    transition:.25s ease;
+}
+
+.brand-item:hover{
+    transform:translateY(-4px);
+    box-shadow:0 8px 18px rgba(0,0,0,.08);
+}
+
+.brand-item img{
+    max-height:40px;
+    object-fit:contain;
+}
+
+/* ==========================================
+   SEARCH + MOBILE BUTTON
+========================================== */
+
+.nav-actions{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.search-box form{
+    display:flex;
+    height:46px;
+    border:1px solid var(--border);
+    border-radius:12px;
+    overflow:hidden;
+}
+
+.search-box input{
+    width:220px;
+    border:none;
+    outline:none;
+    padding:0 15px;
+}
+
+.search-btn{
+    width:50px;
+    border:none;
+    background:var(--primary);
+    color:#fff;
+    cursor:pointer;
+}
+
+.mobile-btn{
+    display:none;
+    width:45px;
+    height:45px;
+    border:none;
+    background:#f8fafc;
+    color:#071426;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:18px;
+    transition:.3s;
+}
+
+.mobile-btn:hover{
+    background:#e2e8f0;
+}
+
+/* ==========================================
+   BREADCRUMB
+========================================== */
+
+.breadcrumb{
+    display:flex;
+    align-items:center;
+    gap:6px;
+    padding:12px 20px;
+    background:#fff;
+    border-bottom:1px solid var(--border);
+    overflow-x:auto;
+    white-space:nowrap;
+    scrollbar-width:none;
+}
+
+.breadcrumb::-webkit-scrollbar{
+    display:none;
+}
+
+.breadcrumb a{
+    color:#64748b;
+}
+
+.breadcrumb .current{
+    font-weight:700;
+    color:#071426;
+}
+
+/* ==========================================
+   DESKTOP LARGE
+========================================== */
+
+@media (max-width:1400px){
+
+    .brand-subnav{
+        width:90vw;
+    }
+
+    .mega-brands{
+        width:90vw;
+    }
+
+}
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width:1024px){
+
+    .nav-menu{
+        gap:20px;
+    }
+
+    .search-box input{
+        width:180px;
+    }
+
+    .brand-subnav{
+        width:95vw;
+    }
+
+    .mega-brands{
+        width:95vw;
+        grid-template-columns:
+        repeat(auto-fill,minmax(120px,1fr));
+    }
+
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width:991px){
+
+    .topbar{
+        display:none;
+    }
+
+    .mobile-btn{
+        display:flex;
+        align-items:center;
+        justify-content:center;
+    }
+
+    .search-box{
+        display:none;
+    }
+
+    .nav-menu{
+        display:none;
+    }
+
+    .nav-menu.mobile-active{
+        display:flex;
+        flex-direction:column;
+
+        position:absolute;
+        top:85px;
+        left:0;
+
+        width:100%;
+
+        background:#fff;
+
+        padding:25px;
+
+        gap:20px;
+
+        max-height:calc(100vh - 85px);
+
+        overflow-y:auto;
+
+        box-shadow:0 15px 30px rgba(0,0,0,.08);
+    }
+
+    .brand-subnav,
+    .mega-brands{
+
+        display:none;
+
+        position:static;
+
+        width:100%;
+
+        transform:none;
+
+        opacity:1;
+
+        visibility:visible;
+
+        margin-top:15px;
+
+        box-shadow:none;
+    }
+
+    .nav-dropdown.active .brand-subnav,
+    .nav-dropdown.active .mega-brands{
+        display:grid;
+    }
+
+}
+
+/* ==========================================
+   TABLET VERTICAL
+========================================== */
+
+@media (max-width:768px){
+
+    .logo img{
+        height:48px;
+    }
+
+    .nav-wrapper{
+        height:75px;
+    }
+
+    .breadcrumb{
+        padding:10px 15px;
+    }
+
+}
+
+/* ==========================================
+   CELULAR
+========================================== */
+
+@media (max-width:480px){
+
+    .nav-menu.mobile-active{
+        padding:20px 15px;
+    }
+
+    .brand-subnav__inner{
+        grid-template-columns:1fr;
+    }
+
+    .mega-brands{
+        grid-template-columns:
+        repeat(2,1fr);
+    }
+
+}

@@ -267,3 +267,46 @@ copyright.innerHTML =
 `© ${year} DS3 Comunicaciones. Todos los derechos reservados.`;
 
 }
+
+
+const slider = document.getElementById("relatedSlider");
+
+document.getElementById("nextProduct").addEventListener("click", () => {
+    slider.scrollBy({
+        left: 350,
+        behavior: "smooth"
+    });
+});
+
+document.getElementById("prevProduct").addEventListener("click", () => {
+    slider.scrollBy({
+        left: -350,
+        behavior: "smooth"
+    });
+});
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const pdfModal = document.getElementById("pdfModal");
+    const openPdfModal = document.getElementById("openPdfModal");
+    const closePdfModal = pdfModal.querySelector(".close-modal");
+
+    openPdfModal.addEventListener("click", () => {
+        pdfModal.classList.add("active");
+    });
+
+    closePdfModal.addEventListener("click", () => {
+        pdfModal.classList.remove("active");
+    });
+
+    window.addEventListener("click", (e) => {
+        if (e.target === pdfModal) {
+            pdfModal.classList.remove("active");
+        }
+    });
+
+});
