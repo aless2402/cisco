@@ -205,18 +205,47 @@
 }
 
 .tech-btn {
-
    background: #dc2626;
-   /* Rojo PDF */
-
    color: #fff;
-
 }
 
 .tech-btn:hover {
-
    background: #b91c1c;
+}
 
+/* Dropdown PDF */
+
+.pdf-dropdown{
+   position:relative;
+   display:inline-block;
+}
+
+.pdf-menu{
+   display:none;
+   position:absolute;
+   top:calc(100% + 8px);
+   left:0;
+   min-width:180px;
+   background:#fff;
+   border-radius:10px;
+   overflow:hidden;
+   box-shadow:0 8px 20px rgba(0,0,0,.15);
+   z-index:9999;
+}
+
+.pdf-menu.active{
+   display:block;
+}
+
+.pdf-menu a{
+   display:block;
+   padding:12px 16px;
+   text-decoration:none;
+   color:#374151;
+}
+
+.pdf-menu a:hover{
+   background:#f3f4f6;
 }
 
 .whatsapp-btn {
